@@ -4,8 +4,10 @@ import operator
 import emoji
 import numpy as np
 import pandas as pd
+
 global Object_of_Study
 Object_of_Study = input('Input the object of this study below\n>>> ')
+
 
 class ListWord:
     def __init__(self, column_name="", column_number=-1):
@@ -303,12 +305,13 @@ class RemoveWords:
                 keep_dic[elements] = data2[elements]
             elif elements == self.Object_of_Study:
                 keep_dic[elements] = data2[elements]
-            elif 'k' * length_k in elements:
+            elif 'k' * length_k in elements.lower():
                 list_wk = list(elements)
                 for khas in list_wk:
                     if khas != "k":
                         string_nok += khas
-                if len(string_nok) < length_no_k:
+                string_k_percent = (1 - (len(string_nok) / len(elements))) * 100
+                if round(string_k_percent) > length_no_k:
                     self.removed.append(string_nok)
                     pass
                 else:
@@ -455,6 +458,7 @@ def main()
         .
 if __name__ == "__main__":
     main()'''
+
 
 def main():
     try:
@@ -751,7 +755,6 @@ def main():
         lista_emo1_split, {lista_emo1_split}
         lista_emo1_split, {len(lista_emo1_split)}
         len(lista_diff), {len(lista_emo1_split) - len(lista_emo_split)}''')
-
 
         # print(emoji.UNICODE_EMOJI['en'])
         # print(len(emoji.UNICODE_EMOJI['en']))
@@ -1375,7 +1378,7 @@ def main():
 
         print(f"""NUMERO DE VEZES QUE A PERECE A PALAVRA PS5 POR DATAFRAME CRIDO (VALE LEMBRAR QUE O DATAFRAME
                         QREMOVE_OPTIONS ESTÁ COM A OPÇÃO REMOVE_PUNC DESLIGADA PELO MOTIVO CITADO ACIMA)
-    
+
             {qremove_link['# de ocorrências'][Object_of_Study]} qremove_link, num ps5
             {qremove_at['# de ocorrências'][Object_of_Study]} qremove_at, num ps5
             {qremove_ponc['# de ocorrências'][Object_of_Study]} qremove_ponc, num ps5
@@ -1387,13 +1390,14 @@ def main():
         qremove_options_1 = qremove_options.sort_values(by='# de ocorrências', ascending=False)
         qremove_options_1 = qremove_options_1.loc[qremove_options_1['# de ocorrências'] > 100]
         qremove_options
-        qremove_ponc_1=qremove_ponc.reset_index()
-        dados_treino_2=dados_treino.reset_index()
+        qremove_ponc_1 = qremove_ponc.reset_index()
+        dados_treino_2 = dados_treino.reset_index()
         listapok = []
         for wordsss in qremove_ponc_1['index']:
             if wordsss not in dados_treino_2['index']:
                 listapok.append(wordsss)
         print(listapok)
+
 
 if __name__ == "__main__":
     main()

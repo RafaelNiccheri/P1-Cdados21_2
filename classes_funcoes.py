@@ -289,7 +289,7 @@ class RemoveWords:
     def remove_laugh(self, length_k, length_no_k):
         """
 
-        :param length_no_k: minimum length of strings without K's
+        :param length_no_k: minimum percentage of the string left after removing k's
         :type length_no_k: int
         :param length_k: minimum length of the laugh that is removed
         :type length_k: int

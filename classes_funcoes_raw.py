@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 
 
+
 class ListWord:
     def __init__(self, column_name="", column_number=-1):
         """

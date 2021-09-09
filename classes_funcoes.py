@@ -13,8 +13,10 @@ class ListWord:
     def __init__(self, column_name="", column_number=-1):
         """
 
-        :type column_number: specify the number of the pandas.DataFrame
-        :type column_name: specify the name of the pandas.DataFrame
+        :param column_number: number of the pandas.DataFrame
+        :type column_number: int
+        :param column_name: name of the pandas.DataFrame
+        :type column_name: str
         """
         self.list_word = []
         self.emoji_list = []
@@ -63,8 +65,8 @@ class ListWord:
         """
         if only_word:
             print(
-                f"only_word is set to {only_word}. Are you sure you only want to keep only words you can get "
-                f"back\n emoji latter")
+                f"only_word is set to {only_word}. Are you sure you only want to keep words you can get "
+                f"back emoji latter")
         self._b_c_l(dataframe, start_list, stop_list, only_word)
         return self.list_word
 
@@ -180,8 +182,6 @@ class ListWord:
         if creat_dataframe:
             new_dataframe = pd.DataFrame.from_dict(dic_obj, orient='index', columns=['# de ocorrências'])
             self.dataframe = new_dataframe
-
-
         else:
             return dic_obj
 

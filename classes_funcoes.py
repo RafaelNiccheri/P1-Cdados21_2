@@ -64,7 +64,7 @@ class ListWord:
         if only_word:
             print(
                 f"only_word is set to {only_word}. Are you sure you only want to keep only words you can get "
-                f"back\nemojis latter")
+                f"back\n emoji latter")
         self._b_c_l(dataframe, start_list, stop_list, only_word)
         return self.list_word
 
@@ -119,7 +119,7 @@ class ListWord:
         """
 
         :param dataframe: pandas.DataFrame
-        :return: list of all emojis in the dataframe
+        :return: list of all emoji in the dataframe
         :rtype: list
         """
         self.__l_e(dataframe)
@@ -131,7 +131,7 @@ class ListWord:
         :type c_o_c: Boolean
         :param c_o_c: if True calls count_list_occurrence
         :param dataframe: pandas.DataFrame
-        :return: list of all words + emojis in the dataframe.
+        :return: list of all words + emoji in the dataframe.
         :rtype: list.
         """
         self._l_e(dataframe, 0, len(dataframe))
@@ -721,10 +721,10 @@ def main():
         import numpy as np
         import pandas as pd
 
-        dados_treino_1 = pd.read_excel('ps5.xlsx')
+        dados_treino_1 = pd.read_excel(f'{Object_of_Study}.xlsx')
         dados_treino_1['Treinamento'][1]
         import emoji
-        import emojis
+        import emoji
 
         lista_emo = []
         lista_emo1 = []
@@ -732,7 +732,7 @@ def main():
         lista_emo1_split = []
         for i in np.arange(0, len(dados_treino_1)):
             lista_emo.append(
-                ''.join(j for j in dados_treino_1['Treinamento'][i] if j in emojis.db.get_emoji_aliases().values()))
+                ''.join(j for j in dados_treino_1['Treinamento'][i] if j in emoji.db.get_emoji_aliases().values()))
             lista_emo1.append(''.join(j for j in dados_treino_1['Treinamento'][i] if j in emoji.UNICODE_EMOJI['en']))
 
             if '' in lista_emo:
@@ -764,7 +764,7 @@ def main():
         print(1)
         print(''.join(j for j in lista_emo1_split if j in emoji.UNICODE_EMOJI['en'].keys()))
         # if True:
-        #     dados_treino = pd.read_excel('ps5.xlsx')
+        #     dados_treino = pd.read_excel(f'{Object_of_Study}.xlsx')
         #     pd.reset_option("display")
         #
         #     p = ListWord(column_name='Treinamento').c_o_f(dados_treino)
@@ -801,7 +801,7 @@ def main():
         # print()
 
         # print('''Classes_funcoes é uma mini biblioteca feita para um projeto de Ciência de Dados com a principal função de
-        # deixar mais fácil a interação entre a biblioteca pandas e as bibliotecas emoji e emojis (esse era o intuito pelo
+        # deixar mais fácil a interação entre a biblioteca pandas e as bibliotecas emoji e emoji (esse era o intuito pelo
         # menos mas acabamos fazendo uma biblioteca para o projeto inteiro). Além das biblioteca citadas anteriormente,
         # ela requer as bibliotecas numpy, operator, functools e string. Quase certeza que todas estão disponíveis com pip
         # install''')
@@ -1169,7 +1169,7 @@ def main():
         #
         #     qazx = dir(RemoveWords)
         #     print(method_list, 'funcs')
-        #     dados_treino = pd.read_excel('ps5.xlsx')
+        #     dados_treino = pd.read_excel(f'{Object_of_Study}.xlsx')
         #     # pd.set_option("display.max_rows", 999, "display.max_columns", 999)
         #     pd.reset_option("display")
         #     # dados_treino.Treinamento
@@ -1195,7 +1195,7 @@ def main():
         #     qremove_options = mn.remove_options(remove_link=True, remove_at=True, remove_ponc=True, remove_word_st3=True,
         #                                         remove_laugh=True, remove_num_str=True)
         import emoji
-        import emojis
+        import emoji
         # lista_splitting_emoji_string = []
         # lista_splitting_grouped_string = []
         # lista_uniting_sting_lists = []
@@ -1204,7 +1204,7 @@ def main():
         lista_diff = []
         for i in np.arange(0, len(dados_treino_1)):
             lista_emo.append(
-                ''.join(j for j in dados_treino_1['Treinamento'][i] if j in emojis.db.get_emoji_aliases().values()))
+                ''.join(j for j in dados_treino_1['Treinamento'][i] if j in emoji.db.get_emoji_aliases().values()))
             lista_emo1.append(''.join(j for j in dados_treino_1['Treinamento'][i] if j in emoji.UNICODE_EMOJI['en']))
             # splitting_emoji_string = emoji.get_emoji_regexp().split(dados_treino_1['Treinamento'][i])
             # splitting_grouped_string = [j.split() for j in splitting_emoji_string]
@@ -1212,7 +1212,7 @@ def main():
             # lista_splitting_emoji_string.append(splitting_emoji_string)
             # lista_splitting_grouped_string.append(splitting_grouped_string)
             # lista_uniting_sting_lists.append(uniting_sting_lists)
-            # lista_emo.append(emojis.get(dados_treino_1['Treinamento'][i]))
+            # lista_emo.append(emoji.get(dados_treino_1['Treinamento'][i]))
             if '' in lista_emo:
                 lista_emo.remove('')
             if '' in lista_emo1:
@@ -1236,52 +1236,52 @@ def main():
         nb4 = 0
         # for j in lista_splitting_emoji_string:
         #     for h in j:
-        #         nb0+=emojis.count(h, unique=False)
+        #         nb0+=emoji.count(h, unique=False)
         # print(nb0)
         #
         # for j in lista_uniting_sting_lists:
         #     for h in j:
-        #         nb1+=emojis.count(h, unique=False)
+        #         nb1+=emoji.count(h, unique=False)
         # print(nb1)
         #
         # for j in lista_splitting_grouped_string:
         #     for h in j:
         #         for q in h:
-        #             nb2+=emojis.count(q, unique=False)
+        #             nb2+=emoji.count(q, unique=False)
         # print(nb2)
         for j in lista_emo:
-            nb3 += emojis.count(j, unique=False)
+            nb3 += emoji.count(j, unique=False)
         print(nb3)
         for j in lista_emo1:
-            nb4 += emojis.count(j, unique=False)
+            nb4 += emoji.count(j, unique=False)
         print(nb4)
         lista_diff.append([i for i in lista_emo1 if i not in lista_emo])
         print(lista_diff)
 
-        abcdefghijkl = f"{list(emojis.db.get_emoji_aliases().keys())}\n{list(emojis.db.get_emoji_aliases().values())}\n{list(emojis.db.get_emoji_aliases())}"
+        abcdefghijkl = f"{list(emoji.db.get_emoji_aliases().keys())}\n{list(emoji.db.get_emoji_aliases().values())}\n{list(emoji.db.get_emoji_aliases())}"
         # print(abcdefghijkl)
         listaaaaa = []
-        for i in list(emojis.db.get_emoji_aliases().values()):
-            listaaaaa.append(emojis.db.get_emoji_by_code(i))
+        for i in list(emoji.db.get_emoji_aliases().values()):
+            listaaaaa.append(emoji.db.get_emoji_by_code(i))
         # print(listaaaaa)
 
-        aqwsedfr = list(emojis.db.get_emoji_aliases().keys()) + list(emojis.db.get_emoji_aliases().values())
+        aqwsedfr = list(emoji.db.get_emoji_aliases().keys()) + list(emoji.db.get_emoji_aliases().values())
         print(aqwsedfr)
 
-        lisqa = list(emojis.db.get_emoji_aliases().items())
+        lisqa = list(emoji.db.get_emoji_aliases().items())
         print(lisqa)
         print(emoji.get_emoji_regexp())
 
         print(emoji.emojize(':grinning_face_with_smiling_eyes::snake::thumbs_up_medium_skin_tone:'))
-        print(emojis.encode('This is a message with emojis :smile: :snake::thumbsup:🏽'))
-        emojisssss = emoji.get_emoji_regexp().split('This is a message with emojis 😄 🐍👍🏽')
-        print(type(emojisssss))
-        print(emojisssss)
+        print(emoji.encode('This is a message with emoji :smile: :snake::thumbsup:🏽'))
+        emojissss = emoji.get_emoji_regexp().split('This is a message with emoji 😄 🐍👍🏽')
+        print(type(emojissss))
+        print(emojissss)
 
-        dados_treino_1 = pd.read_excel('ps5.xlsx')
+        dados_treino_1 = pd.read_excel(f'{Object_of_Study}.xlsx')
         dados_treino_1['Treinamento'][1]
         import emoji
-        import emojis
+        import emoji
         # lista_splitting_emoji_string = []
         # lista_splitting_grouped_string = []
         # lista_uniting_sting_lists = []
@@ -1290,7 +1290,7 @@ def main():
         lista_diff = []
         for i in np.arange(0, len(dados_treino_1)):
             lista_emo.append(
-                ''.join(j for j in dados_treino_1['Treinamento'][i] if j in emojis.db.get_emoji_aliases().values()))
+                ''.join(j for j in dados_treino_1['Treinamento'][i] if j in emoji.db.get_emoji_aliases().values()))
             lista_emo1.append(''.join(j for j in dados_treino_1['Treinamento'][i] if j in emoji.UNICODE_EMOJI['en']))
             # splitting_emoji_string = emoji.get_emoji_regexp().split(dados_treino_1['Treinamento'][i])
             # splitting_grouped_string = [j.split() for j in splitting_emoji_string]
@@ -1298,7 +1298,7 @@ def main():
             # lista_splitting_emoji_string.append(splitting_emoji_string)
             # lista_splitting_grouped_string.append(splitting_grouped_string)
             # lista_uniting_sting_lists.append(uniting_sting_lists)
-            # lista_emo.append(emojis.get(dados_treino_1['Treinamento'][i]))
+            # lista_emo.append(emoji.get(dados_treino_1['Treinamento'][i]))
             if '' in lista_emo:
                 lista_emo.remove('')
             if '' in lista_emo1:
@@ -1322,24 +1322,24 @@ def main():
         nb4 = 0
         # for j in lista_splitting_emoji_string:
         #     for h in j:
-        #         nb0+=emojis.count(h, unique=False)
+        #         nb0+=emoji.count(h, unique=False)
         # print(nb0)
         #
         # for j in lista_uniting_sting_lists:
         #     for h in j:
-        #         nb1+=emojis.count(h, unique=False)
+        #         nb1+=emoji.count(h, unique=False)
         # print(nb1)
         #
         # for j in lista_splitting_grouped_string:
         #     for h in j:
         #         for q in h:
-        #             nb2+=emojis.count(q, unique=False)
+        #             nb2+=emoji.count(q, unique=False)
         # print(nb2)
         for j in lista_emo:
-            nb3 += emojis.count(j, unique=False)
+            nb3 += emoji.count(j, unique=False)
         print(nb3)
         for j in lista_emo1:
-            nb4 += emojis.count(j, unique=False)
+            nb4 += emoji.count(j, unique=False)
         print(nb4)
         lista_diff.append([i for i in lista_emo1 if i not in lista_emo])
         print(lista_diff)
@@ -1349,10 +1349,10 @@ def main():
         import functools
         import operator
         import emoji
-        import emojis
+        import emoji
         import numpy as np
         import pandas as pd
-        dados_treino = pd.read_excel('ps5.xlsx')
+        dados_treino = pd.read_excel(f'{Object_of_Study}.xlsx')
         dados_treino
 
         p = ListWord(column_name='Treinamento').c_o_f(dados_treino)
@@ -1373,7 +1373,7 @@ def main():
         qremove_laugh = laugh.remove_laugh(4, 3)
         qremove_num_str = num_str.remove_num_str(3)
         qremove_options = options.remove_options(remove_at={True: '()'}, remove_link={True: '()'},
-                                                 remove_ponc={False: '()'}, remove_laugh={True: '(4, 3)'},
+                                                 remove_ponc={False: '()'}, remove_laugh={True: '(4, 5)'},
                                                  remove_word_sts={True: '(3)'}, remove_num_str={True: '(3)'})
 
         print(f"""NUMERO DE VEZES QUE A PERECE A PALAVRA PS5 POR DATAFRAME CRIDO (VALE LEMBRAR QUE O DATAFRAME

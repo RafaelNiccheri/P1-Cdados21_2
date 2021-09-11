@@ -8,7 +8,11 @@ Por mais que o projeto ainda nao esteja completo, estamos contentes com o progre
 ## Branches:
 Depois de ter terminado de escrever o codigo para a limpeza dos tweets iniciamos o processo de otimização do codigo. Ele consistia em passar por todas as funçaos e parametros globais das duas classes procurando semelhanças entre as Enherited functions de cada uma delas com o intuito de criar um decorando, uma funçáo ou um metodo global da classe que fosse capaz de executar esta parte semelhante para tds as funcões, deste modo diminuindo a memoria ocupada, o temanho do arquivo e o numero de linhas usadas. Para atingir este objetivo foi criado o branch Optimizing em que eram commitados todos os comits que nao adicionavam usuabilidades novas mas sim corrigiam/melhoravam/atualizavam usuabilidades colocadas em previos commits. 
 
-
+### Explicações gerais sobre o projeto:
+- Por que criamos tantas opções de organização da base de dados?
+  - Como nunca é possivel prever o que um usuario comum pretende fazer exatamente com a base de dados organizada ou c ele pretende usa-la em sua integra achamos que seria uma otima adição fazer com que algumas opções retornem dicionarios outras retornem listas e outras retornem dataframes.
+- Por que criamos 7 dataframes?
+  - Com o intuito de otimizar ao maximo o desempenho do nosso classificador, uma limpeza so do dataframe nao seria o sufuciente pois nao teriamos parametros de comparacão para saber quao eficiente essa limpeza foi ao que se diz respesto ao desempenho do classificador. Uma limpeza extremamente rigida nem sempre é a melhor opção mas concerteza é uma opção como qualquer outra tambem é, com isso em mente decidimos criar 6 filtros diferentes e um dataframe diferente para cada filtro. No entanto como dito acima, é impossivel prever qual é a melhor combinacao entre essas limpezas e por isso dicidimos tambem criar o 7 dataframe, criado apartir da função **"remove_options"** ele permite que o usuario passe True (Verdadeiro) ou False (Falso) para cada filtro criado, alem de passar os seus parametros é claro, deste modo, é possivel criar 6! (6*5*4*3*2*1) dataframes diferentes o que equivale a 720 possibilidades. 
 ### Documentação:
 
 ##### Em Breve...

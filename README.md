@@ -2,6 +2,13 @@
 ## Conta do tweeter @RNiccheri
 #### Esquecemos de colocar docstring para as classes mas tds as funções tem ja.
 
+## Nossa opinião sobre nosso projeto:
+Por mais que o projeto ainda nao esteja completo, estamos contentes com o progresso realizado e o ritimo em que estamos sendo capazes de atualiza-lo.
+
+## Branches:
+Depois de ter terminado de escrever o codigo para a limpeza dos tweets iniciamos o processo de otimização do codigo. Ele consistia em passar por todas as funçaos e parametros globais das duas classes procurando semelhanças entre as Enherited functions de cada uma delas com o intuito de criar um decorando, uma funçáo ou um metodo global da classe que fosse capaz de executar esta parte semelhante para tds as funcões, deste modo diminuindo a memoria ocupada, o temanho do arquivo e o numero de linhas usadas. Para atingir este objetivo foi criado o branch Optimizing em que eram commitados todos os comits que nao adicionavam usuabilidades novas mas sim corrigiam/melhoravam/atualizavam usuabilidades colocadas em previos commits. 
+
+
 ### sobro o projeto:
 
 
@@ -18,7 +25,7 @@
 If you've never worked with a programing language this project will be a great entry point. It explains verry well the logic behind each line and expands on that by teaching in paralel how to properlly write your code respecting pythons "formating" guide-lines. Eventhought this project is easy for someone with a little of programing expirience it still teaches valuable python etiquette that programers should learn and aply from the start.
 
 ## Branches:
-I wanted to creat two independent branches, one with the coppy of the folder i worked with and the other only with the .py files but wasnt able to. As it is right now I only need to delete the main branche and coppy this file the both of the independent branches.
+I wanted to creat two independent branches, one with the coppy of the folder I worked with and the other only with the .py files but wasnt able to. As it is right now I only need to delete the main branche and coppy this file the both of the independent branches.
 
 ## overall opinion:
 - Project itself:

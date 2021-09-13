@@ -561,7 +561,7 @@ def main():
             print('@')
 
         def self_remove_link():
-            print('http')
+            print(f'{http}')
 
         def self_remove_ponc():
             print('ponc')

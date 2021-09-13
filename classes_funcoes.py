@@ -6,11 +6,11 @@ import numpy as np
 import pandas as pd
 
 global Object_of_Study
-Object_of_Study = input('Input the object of this study below\n>>> ')
+Object_of_Study: str = input('Input the object of this study below\n>>> ')
 
 
 class ListWord:
-    def __init__(self, column_name="", column_number=-1):
+    def __init__(self, column_name: str = "", column_number: int = -1):
         """
 
         :param column_number: number of the pandas.DataFrame
@@ -98,6 +98,7 @@ class ListWord:
 
     def _l_e(self, dataframe, start_list, stop_list):
         """
+
         :type dataframe: pandas.DataFrame
         :type start_list: int
         :type stop_list: int
@@ -117,14 +118,14 @@ class ListWord:
             for j in lista_emo1_s:
                 self.emoji_list.append(j)
 
-    def list_emoji(self, dataframe):
+    def list_emoji(self, dataframe, start_list, stop_list):
         """
 
         :param dataframe: pandas.DataFrame
         :return: list of all emoji in the dataframe
         :rtype: list
         """
-        self.__l_e(dataframe)
+        self._l_e(dataframe, start_list, stop_list)
         return self.emoji_list
 
     def lists_all(self, dataframe, c_o_c=False):

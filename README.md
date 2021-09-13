@@ -4,6 +4,11 @@
 
 ### quero deixar explicito que nos referimos a nossa opinião sobre o andamento do nosso projeto e nao sobre o projeto proposto pela professora. Tmbem gostaria de deixar claro que existem varios erros de portugues pois ao escrever esta primeira versao nao nos preocupamos com gramatica ou sintaxe do texto.
 
+## Problema Apresentado:
+
+
+
+
 ## Nossa opinião sobre nosso projeto:
 Por mais que o projeto ainda nao esteja completo, estamos contentes com o progresso realizado e o ritimo em que estamos sendo capazes de atualiza-lo.
 

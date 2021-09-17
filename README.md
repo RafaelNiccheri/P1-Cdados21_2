@@ -5,6 +5,8 @@
 ### quero deixar explicito que nos referimos a nossa opinião sobre o andamento do nosso projeto e nao sobre o projeto proposto pela professora. Tmbem gostaria de deixar claro que existem varios erros de portugues pois ao escrever esta primeira versao nao nos preocupamos com gramatica ou sintaxe do texto.
 
 ## Problema Apresentado:
+###O problema proposto era como descrito a seguir:
+Uma empresa queria reunir tweets sobre um de seus prudotos, no entanto, como o tweeter  é uma das maisores plataformas digitais o nemuro de tweets era muito grande. Entao, era preciso arrumar um modo de separar os tweets que eram relevantes, sendo assim nos teriamos sido contratodos por essa empresa, afim de criar um classicador de tweets relevantes e irrelevantes, e teriamos escolhido utilizar o teorema de Naive-Bayes em conjunto com a Suavização de Laplace para criar este classificador de tweets. 
 
 
 

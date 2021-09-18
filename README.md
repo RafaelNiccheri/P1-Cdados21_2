@@ -5,6 +5,8 @@
 ### quero deixar explicito que nos referimos a nossa opinião sobre o andamento do nosso projeto e nao sobre o projeto proposto pela professora. Tmbem gostaria de deixar claro que existem varios erros de portugues pois ao escrever esta primeira versao nao nos preocupamos com gramatica ou sintaxe do texto.
 
 ## Problema Apresentado:
+### O problema proposto era como descrito a seguir:
+Uma empresa queria reunir tweets sobre um de seus prudotos, no entanto, como o tweeter  é uma das maisores plataformas digitais o nemuro de tweets era muito grande. Entao, era preciso arrumar um modo de separar os tweets que eram relevantes, sendo assim nos teriamos sido contratodos por essa empresa, afim de criar um classicador de tweets relevantes e irrelevantes, e teriamos escolhido utilizar o teorema de Naive-Bayes em conjunto com a Suavização de Laplace para criar este classificador de tweets. 
 
 
 
@@ -15,11 +17,22 @@ Por mais que o projeto ainda nao esteja completo, estamos contentes com o progre
 ## Branches:
 Depois de ter terminado de escrever o codigo para a limpeza dos tweets iniciamos o processo de otimização do codigo. Ele consistia em passar por todas as funçaos e parametros globais das duas classes procurando semelhanças entre as Enherited functions de cada uma delas com o intuito de criar um decorando, uma funçáo ou um metodo global da classe que fosse capaz de executar esta parte semelhante para tds as funcões, deste modo diminuindo a memoria ocupada, o temanho do arquivo e o numero de linhas usadas. Para atingir este objetivo foi criado o branch Optimizing em que eram commitados todos os comits que nao adicionavam usuabilidades novas mas sim corrigiam/melhoravam/atualizavam usuabilidades colocadas em previos commits. 
 
-### Explicações gerais sobre o projeto:
+### Explicações gerais sobre nosso projeto:
 - Por que criamos tantas opções de organização da base de dados?
   - Como nunca é possivel prever o que um usuario comum pretende fazer exatamente com a base de dados organizada ou c ele pretende usa-la em sua integra achamos que seria uma otima adição fazer com que algumas opções retornem dicionarios outras retornem listas e outras retornem dataframes.
 - Por que criamos 7 dataframes?
-  - Com o intuito de otimizar ao maximo o desempenho do nosso classificador, uma limpeza so do dataframe nao seria o sufuciente pois nao teriamos parametros de comparacão para saber quao eficiente essa limpeza foi ao que se diz respesto ao desempenho do classificador. Uma limpeza extremamente rigida nem sempre é a melhor opção mas concerteza é uma opção como qualquer outra tambem é, com isso em mente decidimos criar 6 filtros diferentes e um dataframe diferente para cada filtro. No entanto como dito acima, é impossivel prever qual é a melhor combinacao entre essas limpezas e por isso dicidimos tambem criar o 7 dataframe, criado apartir da função **"remove_options"** ele permite que o usuario passe True (Verdadeiro) ou False (Falso) para cada filtro criado, alem de passar os seus parametros é claro, deste modo, é possivel criar 6! (6*5*4*3*2*1) dataframes diferentes o que equivale a 720 possibilidades. 
+  - Com o intuito de otimizar ao maximo o desempenho do nosso classificador, uma limpeza so do dataframe nao seria o sufuciente pois nao teriamos parametros de comparacão para saber quao eficiente essa limpeza foi ao que se diz respesto ao desempenho do classificador. Uma limpeza extremamente rigida nem sempre é a melhor opção mas concerteza é uma opção como qualquer outra tambem é, com isso em mente decidimos criar 6 filtros diferentes e um dataframe diferente para cada filtro. No entanto como dito acima, é impossivel prever qual é a melhor combinacao entre essas limpezas e por isso dicidimos tambem criar o 7 dataframe, criado apartir da função **"remove_options"** ele permite que o usuario passe True (Verdadeiro) ou False (Falso) para cada filtro criado, alem de passar os seus parametros é claro, deste modo, é possivel criar 6! dataframes diferentes o que equivale a 720 possibilidades. Os 6 tipos de filtragem são:
+  - remove_at - tira palavras com @
+  - remove_link - Tira palavras com http
+  - remove_ponc - Tira pontuação
+  - remove_laugh - Tira palavras que tenham mais do que x k's juntos contanto que eles representem no minimo y% da palavra
+  - remove_word_sts - Tira palavras menores do que x
+  - remove_num_str - Tira palavras com uma sequencia de numeros maior que x
+  - remove_options - recebe True/False para cada uma dessas funcoes e caso a funcáao possa receber ou exija parametros ela tamnem os recebe
+<p align="center">
+  <img src="https://github.com/RafaelNiccheri/gfjh/blob/main/Captura%20de%20tela%202021-09-16%20220519.png">
+</p>
+
 ### Documentação:
 
 ##### Em Breve...

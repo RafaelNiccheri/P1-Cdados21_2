@@ -12,24 +12,22 @@ Uma empresa queria reunir tweets sobre um de seus prudotos, no entanto, como o t
 
 
 ## Nossa opinião sobre nosso projeto:
-Por mais que o projeto ainda nao esteja completo, estamos contentes com o progresso realizado e o ritimo em que estamos sendo capazes de atualiza-lo.
+Por mais que nosso classificar estaja com um desempenho de +/- 52.5% estamos felizes com o resultado do nosso projeto. Para criar o classificador criamos um novo mudolu para a biblioteca pandas e emoji do zero, o que tornando a maior parte do codigo escrito durante o projeto algo que podera ser reutilizado pelos membros do grupo em outros projetos. Além disso, ao procurar maneiras de melhorar a performance descobrimos tambem novos modos de categirizar textos para programação como a Vetorização de Texto e conseguimos estabelecer conexoes entre a relação entre os metodos de vetorização BOW e TF-IDF e a relação entre a Suavização de Laplace e o Teorema de Naive-Bays
 
 ## Branches:
 Depois de ter terminado de escrever o codigo para a limpeza dos tweets iniciamos o processo de otimização do codigo. Ele consistia em passar por todas as funçaos e parametros globais das duas classes procurando semelhanças entre as Enherited functions de cada uma delas com o intuito de criar um decorando, uma funçáo ou um metodo global da classe que fosse capaz de executar esta parte semelhante para tds as funcões, deste modo diminuindo a memoria ocupada, o temanho do arquivo e o numero de linhas usadas. Para atingir este objetivo sem correr o risco substituir nossos arquvos funcionais par arquivos com gliches/bugs resultantes de uma optimizaçao incompleta foi criado o branch Optimizing em que eram commitados todos os comits que nao adicionavam usuabilidades novas mas sim corrigiam/melhoravam/atualizavam usuabilidades colocadas em previos commits, ao terminar de trabalhar em cada melhoria, era feito um merge afim de deixar o branch Optimizing sempre o menor numero possivel de comits a frente do branch main para que não fosse perdido mt progresso casa algun arquivo com diferenças substanciais a ultima versao otimizada e um numero de erros expressivo o bastante para considerar sua descontinuaçao fosse comitado.
-
-- ## Explicações gerais sobre nosso projeto:
-  - ### Geral:
-  - Por que criamos tantas opções de organização da base de dados?
-    - Como nunca é possivel prever o que um usuario comum pretende fazer exatamente com a base de dados organizada ou como ele pretende usa-la em sua integra achamos que seria uma otima adição fazer com que algumas opções retornem dicionarios outras retornem listas e outras retornem dataframes.
-    - Por que criamos 7 dataframes?
-    - Com o intuito de otimizar ao maximo o desempenho do nosso classificador, uma limpeza so do dataframe não seria o sufuciente pois nao teriamos parametros de comparacão para saber quão eficiente essa limpeza foi ao que se diz respesto ao desempenho do classificador. Uma limpeza extremamente rigida nem sempre é a melhor opção mas concerteza é uma opção como qualquer outra tambem é, com isso em mente decidimos criar 6 filtros diferentes e um dataframe diferente para cada filtro. No entanto como dito acima, é impossivel prever qual é a melhor combinacao entre essas limpezas e por isso dicidimos tambem criar o 7 dataframe, criado apartir da função **"remove_options"** ele permite que o usuario passe True (Verdadeiro) ou False (Falso) para cada filtro criado, alem de passar os seus parametros é claro, deste modo, é possivel criar 6! dataframes diferentes o que equivale a 720 possibilidades. Os 6 tipos de filtragem são:
-      - remove_at - tira palavras com @
-      - remove_link - Tira palavras com http
-      - remove_ponc - Tira pontuação
-      - remove_laugh - Tira palavras que tenham mais do que x k's juntos contanto que eles representem no minimo y% da palavra
-      - remove_word_sts - Tira palavras menores do que x
-      - remove_num_str - Tira palavras com uma sequencia de numeros maior que x
-      - remove_options - recebe True/False para cada uma dessas funcoes e caso a funcáao possa receber ou exija parametros ela tamnem os recebe
+- ## Sobre nosso projeto
+     - Por que criamos tantas opções de organização da base de dados?
+       - Como nunca é possivel prever o que um usuario comum pretende fazer exatamente com a base de dados organizada ou como ele pretende usa-la em sua integra achamos que seria uma otima adição fazer com que algumas opções retornem dicionarios outras retornem listas e outras retornem dataframes.
+         - Por que criamos 7 filtros diferentes?
+           - Com a intuito de criar um codigo que alem de ser util para esse projeto pudesse tambem ser usado para qualquer outro projeto usando pandas achamos que sepenas um ou dois filtros nao seriam o suficiente
+             - remove_at - tira palavras com @
+             - remove_link - Tira palavras com http
+             - remove_ponc - Tira pontuação
+             - remove_laugh - Tira palavras que tenham mais do que x k's juntos contanto que eles representem no minimo y% da palavra
+             - remove_word_sts - Tira palavras menores do que x
+             - remove_num_str - Tira palavras com uma sequencia de numeros maior que x
+             - remove_options - recebe True/False para cada uma dessas funcoes e caso a funcáao possa receber ou exija parametros ela tamnem os recebe
 <p align="center">
   <img src="https://github.com/RafaelNiccheri/gfjh/blob/main/Captura%20de%20tela%202021-09-16%20220519.png">
 </p>
@@ -38,8 +36,12 @@ Depois de ter terminado de escrever o codigo para a limpeza dos tweets iniciamos
   - #### Lemmatizing words
   - #### n-grams
   - #### TF-IDF
-TF-IDF (Term Frequency-Inverse Document Frequency) é um modo de vetorizar textos, estes podem ser livros artigos científicos revistas ou até mesmo tweets. Vetorizar um texto é o processo de atribuir números para textos, um exemplo da utilização desse mecanismo no dia a dia é a ferramenta de pesquisa do google e demais browsers. É possível fazer um paralelo entre a TF-IDF e a Suavização de Laplace, uma vez que assim como a Suavização de Laplace, esta também surgiu para corrigir um problema em um outro método, no entanto em seu caso foi para corrigir um problema na Vetorização de Textos por Bag of Words (BOW). O método BOW vetoriza textos somente de acordo com a frequência com que cada palavra de uma frase aparece em cada texto analisado. JÁ a TF-IDF também leva em conta a quantidade de vezes em que uma palavra aparece no conjunto de texto. Ao separar o anagrama TF-IDF no “hífen” obtemos TF, o que equivale ao método BOW, e IDF, o que leva em conta a frequência total de cada palavra em todos os textos. E seguir está uma foto do cálculo para realizar TF-IDF.
-
+TF-IDF (Term Frequency-Inverse Document Frequency) é um modo de vetorizar textos, estes podem ser livros artigos científicos revistas ou até mesmo tweets. Vetorizar um texto é o processo de atribuir números para textos, um exemplo da utilização desse mecanismo no dia a dia é a ferramenta de pesquisa do google e demais browsers. É possível fazer um paralelo entre a TF-IDF e a Suavização de Laplace, uma vez que assim como a Suavização de Laplace, esta também surgiu para corrigir um problema em um outro método, no entanto em seu caso foi para corrigir um problema na Vetorização de Textos por Bag of Words (BOW). O método BOW vetoriza textos somente de acordo com a frequência com que cada palavra de uma frase aparece em cada texto analisado. JÁ a TF-IDF também leva em conta a quantidade de vezes em que uma palavra aparece no conjunto de texto. Ao separar o anagrama TF-IDF no “hífen” obtemos TF, o que equivale ao método BOW, e IDF, o que leva em conta a frequência total de cada palavra em todos os textos. A seguir está uma imagem do cálculo para realizar TF-IDF e um embedded link  para o site usado para entender o que TF-IDF é e como ele pode ser usado e aplicado.
+<p align="center">
+ <a href="https://towardsdatascience.com/getting-started-with-text-vectorization-2f2efbec6685" >
+ <img src="https://raw.githubusercontent.com/RafaelNiccheri/gfjh/main/zdfsg.png?token=AO7T4BXDFZ4FLHVJP4LBPG3BKOHWQ">
+  </a>
+</p>
 ### Documentação:
 
 ##### Em Breve...
@@ -73,3 +75,14 @@ I wanted to creat two independent branches, one with the coppy of the folder I w
   ## HERE IS MY PROGRESS AS OF WRITING THIS: 
   ![image](https://user-images.githubusercontent.com/62864902/131230794-a84569b3-442e-4623-a4b5-96dc946e6823.png)
 
+<ol>
+<li>
+<p>A paragraph
+with two lines.</p>
+<pre><code>indented code
+</code></pre>
+<blockquote>
+<p>A block quote.</p>
+</blockquote>
+</li>
+</ol>

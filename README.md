@@ -15,23 +15,30 @@ Uma empresa queria reunir tweets sobre um de seus prudotos, no entanto, como o t
 Por mais que o projeto ainda nao esteja completo, estamos contentes com o progresso realizado e o ritimo em que estamos sendo capazes de atualiza-lo.
 
 ## Branches:
-Depois de ter terminado de escrever o codigo para a limpeza dos tweets iniciamos o processo de otimização do codigo. Ele consistia em passar por todas as funçaos e parametros globais das duas classes procurando semelhanças entre as Enherited functions de cada uma delas com o intuito de criar um decorando, uma funçáo ou um metodo global da classe que fosse capaz de executar esta parte semelhante para tds as funcões, deste modo diminuindo a memoria ocupada, o temanho do arquivo e o numero de linhas usadas. Para atingir este objetivo foi criado o branch Optimizing em que eram commitados todos os comits que nao adicionavam usuabilidades novas mas sim corrigiam/melhoravam/atualizavam usuabilidades colocadas em previos commits. 
+Depois de ter terminado de escrever o codigo para a limpeza dos tweets iniciamos o processo de otimização do codigo. Ele consistia em passar por todas as funçaos e parametros globais das duas classes procurando semelhanças entre as Enherited functions de cada uma delas com o intuito de criar um decorando, uma funçáo ou um metodo global da classe que fosse capaz de executar esta parte semelhante para tds as funcões, deste modo diminuindo a memoria ocupada, o temanho do arquivo e o numero de linhas usadas. Para atingir este objetivo sem correr o risco substituir nossos arquvos funcionais par arquivos com gliches/bugs resultantes de uma optimizaçao incompleta foi criado o branch Optimizing em que eram commitados todos os comits que nao adicionavam usuabilidades novas mas sim corrigiam/melhoravam/atualizavam usuabilidades colocadas em previos commits, ao terminar de trabalhar em cada melhoria, era feito um merge afim de deixar o branch Optimizing sempre o menor numero possivel de comits a frente do branch main para que não fosse perdido mt progresso casa algun arquivo com diferenças substanciais a ultima versao otimizada e um numero de erros expressivo o bastante para considerar sua descontinuaçao fosse comitado.
 
-### Explicações gerais sobre nosso projeto:
-- Por que criamos tantas opções de organização da base de dados?
-  - Como nunca é possivel prever o que um usuario comum pretende fazer exatamente com a base de dados organizada ou c ele pretende usa-la em sua integra achamos que seria uma otima adição fazer com que algumas opções retornem dicionarios outras retornem listas e outras retornem dataframes.
-- Por que criamos 7 dataframes?
-  - Com o intuito de otimizar ao maximo o desempenho do nosso classificador, uma limpeza so do dataframe nao seria o sufuciente pois nao teriamos parametros de comparacão para saber quao eficiente essa limpeza foi ao que se diz respesto ao desempenho do classificador. Uma limpeza extremamente rigida nem sempre é a melhor opção mas concerteza é uma opção como qualquer outra tambem é, com isso em mente decidimos criar 6 filtros diferentes e um dataframe diferente para cada filtro. No entanto como dito acima, é impossivel prever qual é a melhor combinacao entre essas limpezas e por isso dicidimos tambem criar o 7 dataframe, criado apartir da função **"remove_options"** ele permite que o usuario passe True (Verdadeiro) ou False (Falso) para cada filtro criado, alem de passar os seus parametros é claro, deste modo, é possivel criar 6! dataframes diferentes o que equivale a 720 possibilidades. Os 6 tipos de filtragem são:
-  - remove_at - tira palavras com @
-  - remove_link - Tira palavras com http
-  - remove_ponc - Tira pontuação
-  - remove_laugh - Tira palavras que tenham mais do que x k's juntos contanto que eles representem no minimo y% da palavra
-  - remove_word_sts - Tira palavras menores do que x
-  - remove_num_str - Tira palavras com uma sequencia de numeros maior que x
-  - remove_options - recebe True/False para cada uma dessas funcoes e caso a funcáao possa receber ou exija parametros ela tamnem os recebe
+- ## Explicações gerais sobre nosso projeto:
+  - ### Geral:
+  - Por que criamos tantas opções de organização da base de dados?
+    - Como nunca é possivel prever o que um usuario comum pretende fazer exatamente com a base de dados organizada ou como ele pretende usa-la em sua integra achamos que seria uma otima adição fazer com que algumas opções retornem dicionarios outras retornem listas e outras retornem dataframes.
+    - Por que criamos 7 dataframes?
+    - Com o intuito de otimizar ao maximo o desempenho do nosso classificador, uma limpeza so do dataframe não seria o sufuciente pois nao teriamos parametros de comparacão para saber quão eficiente essa limpeza foi ao que se diz respesto ao desempenho do classificador. Uma limpeza extremamente rigida nem sempre é a melhor opção mas concerteza é uma opção como qualquer outra tambem é, com isso em mente decidimos criar 6 filtros diferentes e um dataframe diferente para cada filtro. No entanto como dito acima, é impossivel prever qual é a melhor combinacao entre essas limpezas e por isso dicidimos tambem criar o 7 dataframe, criado apartir da função **"remove_options"** ele permite que o usuario passe True (Verdadeiro) ou False (Falso) para cada filtro criado, alem de passar os seus parametros é claro, deste modo, é possivel criar 6! dataframes diferentes o que equivale a 720 possibilidades. Os 6 tipos de filtragem são:
+      - remove_at - tira palavras com @
+      - remove_link - Tira palavras com http
+      - remove_ponc - Tira pontuação
+      - remove_laugh - Tira palavras que tenham mais do que x k's juntos contanto que eles representem no minimo y% da palavra
+      - remove_word_sts - Tira palavras menores do que x
+      - remove_num_str - Tira palavras com uma sequencia de numeros maior que x
+      - remove_options - recebe True/False para cada uma dessas funcoes e caso a funcáao possa receber ou exija parametros ela tamnem os recebe
 <p align="center">
   <img src="https://github.com/RafaelNiccheri/gfjh/blob/main/Captura%20de%20tela%202021-09-16%20220519.png">
 </p>
+
+- ### Como ele pode ser melhorado:
+  - #### Lemmatizing words
+  - #### n-grams
+  - #### TF-IDF
+TF-IDF (Term Frequency-Inverse Document Frequency) é um modo de vetorizar textos, estes podem ser livros artigos científicos revistas ou até mesmo tweets. Vetorizar um texto é o processo de atribuir números para textos, um exemplo da utilização desse mecanismo no dia a dia é a ferramenta de pesquisa do google e demais browsers. É possível fazer um paralelo entre a TF-IDF e a Suavização de Laplace, uma vez que assim como a Suavização de Laplace, esta também surgiu para corrigir um problema em um outro método, no entanto em seu caso foi para corrigir um problema na Vetorização de Textos por Bag of Words (BOW). O método BOW vetoriza textos somente de acordo com a frequência com que cada palavra de uma frase aparece em cada texto analisado. JÁ a TF-IDF também leva em conta a quantidade de vezes em que uma palavra aparece no conjunto de texto. Ao separar o anagrama TF-IDF no “hífen” obtemos TF, o que equivale ao método BOW, e IDF, o que leva em conta a frequência total de cada palavra em todos os textos. E seguir está uma foto do cálculo para realizar TF-IDF.
 
 ### Documentação:
 

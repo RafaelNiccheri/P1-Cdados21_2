@@ -32,13 +32,15 @@ Por mais que nosso classificador esteja com um desempenho de +/- 52.5% de acurá
 ````python
 # apos limpar e separar a base de dados em relevante e irrelevante
 rel = ['asd356756378fasdf aerg', 'asdfas123df', 'import', 'sys']
+rel_join = ' '.join(str(n) for n in rel)
 irel = ['asdfas123df', 'asd356756378fasdf', 'dsghsdfghs', 'aerg', 'Projetos']
+irel_join = ' '.join(str(n) for n in rel)
 l = rel + irel
 l_split = [j for s in l for j in s.split()]
 l_join = ' '.join(str(n) for n in l)
-frequencia_txt_td = {s: l_join.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frquencias no texto inteiro
-frequencia_txt_rel = {s: l_join.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frquencias no texto rel
-frequencia_txt_irel = {s: l_join.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frquencias no texto irel
+frequencia_txt_td = {s: l_join.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frequencias no texto inteiro
+frequencia_txt_rel = {s: l_rel.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frequencias no texto rel
+frequencia_txt_irel = {s: l_irel.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frequencias no texto irel
 'agr só faltaria matematica - agr só faltaria matematica - agr só faltaria matematica - agr só faltaria matematica'
 ````
 <p align="center">

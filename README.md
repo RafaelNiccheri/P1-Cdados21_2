@@ -21,7 +21,7 @@ Por mais que nosso classificador esteja com um desempenho de +/- 52.5% de acurá
              - remove_num_str - tira palavras com uma sequência de números maiores que x ou que tenham uma quantidade de números que representem mais de y% de uma palavra
              - remove_options - recebe True/False para cada uma dessas funções e caso a função possa receber ou exija parâmetros ela também os recebe
 <p align="center">
-  <img src="https://github.com/RafaelNiccheri/gfjh/blob/main/Captura%20de%20tela%202021-09-16%20220519.png">
+  <img src="https://github.com/RafaelNiccheri/gfjh/blob/79f18e10c9a107247f499361e290049c95e9b7e8/Captura%20de%20tela%202021-09-16%20220519.png">
 </p>
 
 - ### Como ele pode ser melhorado:

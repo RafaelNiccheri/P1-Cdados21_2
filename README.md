@@ -56,47 +56,13 @@ frequencia_txt_irel = {s: l_join.count(s) for s in l_split}  # cria um dicionari
  <img src="https://raw.githubusercontent.com/RafaelNiccheri/gfjh/main/zdfsg.png?token=AO7T4BXDFZ4FLHVJP4LBPG3BKOHWQ">
   </a>
 </p>
+
+### Poderiamos usar esse classificador para gerar mais amostras de treinamento?
+Não podemos usar o classificador para gerar novas amostras de treinamento pois nesse caso, o classificador iria classificar as amostras e ao usar ela para treinar iria obter um acerto de 100% uma vez que ele está comparando sua classificação com ela mesma ao invés de comparar com uma classificação previa feita de outro modo. Usar o classificador desse modo é igual a fazer uma prova e usar ela mesma como gabarito para checar suas respostas.
+
+# Conclusão
+Nossa classificador obteve em media uma acuracia de 52%, o que n é muito mais preciso do que rodar um dado, no entanto ao discorrermos sobre o motivo disso chegamos a alguma hipoteses. Primeiro nós acreditamos que um fator decisivo no perda de acuracia é o tamanho da base de dados utilizada. Como nos utilizamos apensa 300 tweets para a base de dados Treinamento, o vocabulario de palavras uteis do nosso classificador estava mt pequeno fazendo com que palavra que frases que potencialmente fossem ser classificadas como relevantes acabassem sendo classificadas erroniamente como irrelevantes ou vice-versa. No entanto, essa hipotese apenas explicava o motivo da acuracia estar tao perto de 50% mas não explicava o motivo de todas as simulações realizadas terem mais tweets totais classificasdos como relevantes (aproximadamente 56%) do que o total de tweets relevantes classificados a mao. Foi então que surgiu nossa segunda hipotese, esta discorre sobre a influencia que frases de dupla negação ou sarcasmo tem com relação a parformance do nosso classificador, nós acreditamos que como o tweeter é uma plataforma informal e livre é comum encontrar frases sarcasticas e de dupla negaçao, estas geralmente são constituidas por palavras relevbantes e que transmitem sentido e opiniões importantes, no entanto as mesmas, neste caso transmitem apenas criticas e opiniões vazias sem relevancia alguma para o contexto do estudo o que infla o numero de palavras irrelevantes classificas como relevantes.
+
 ### Documentação:
 
 ##### Em Breve...
-
-
-# Place-Holder text tirado de um outro repositorio meu para ter uma ideia de formatação do read.me
-
-# Simple-Chatty-Bot (complete)
-
-## My opinipon:
-If you've never worked with a programing language this project will be a great entry point. It explains verry well the logic behind each line and expands on that by teaching in paralel how to properlly write your code respecting pythons "formating" guide-lines. Eventhought this project is easy for someone with a little of programing expirience it still teaches valuable python etiquette that programers should learn and aply from the start.
-
-## Branches:
-I wanted to creat two independent branches, one with the coppy of the folder I worked with and the other only with the .py files but wasnt able to. As it is right now I only need to delete the main branche and coppy this file the both of the independent branches.
-
-## overall opinion:
-- Project itself:
-  - Targeted at people who have never programed or just started a few days or weeks ago
-  - If you've learned the correct way to format your code they have a [PEP-8 code style mini course](https://hyperskill.org/learn/step/5879) and  a [commenting mini course](https://hyperskill.org/learn/step/6081). Things I hadn't lerned about before those two mini couses.
-    - I'd never heard of [PEP-8](https://www.python.org/dev/peps/) or any other type of coding stile guide books
-    - I never knew the correct spacing between the code line and the comment or how to deal with big comments
-  - If you know a little about programing but also haven't heard of those guideline both mini courses toghether wont take more then 20 minuts
-  - It's easy to creat a connection between all the different things you're tought
-  - The idea to turn all the the different benchmarks you reach into a final project gisves the sensation that what you learned was worth wile
-  - As someone diagnosed with ADHD and ADD it's really gruelling to read all the theory presented wich led me to skip all of it exept for the PEP-8 one
-- About the option to comit or not to [GitHub](https://github.com/):
-  - I would do it even if only privately because it's a good way to keep track of your improvement
-  - This being the first project for people who know nouthing about python it should have a walk through for commiting through JetBrains IDE.
-    - I've used GitHub before but always have truble using it (specially to creat idependent branches) I could never do it. I already tried all methods I could find.
-  
-  ## HERE IS MY PROGRESS AS OF WRITING THIS: 
-  ![image](https://user-images.githubusercontent.com/62864902/131230794-a84569b3-442e-4623-a4b5-96dc946e6823.png)
-
-<ol>
-<li>
-<p>A paragraph
-with two lines.</p>
-<pre><code>indented code
-</code></pre>
-<blockquote>
-<p>A block quote.</p>
-</blockquote>
-</li>
-</ol>

@@ -36,7 +36,21 @@ Depois de ter terminado de escrever o codigo para a limpeza dos tweets iniciamos
   - #### Lemmatizing words
   - #### n-grams
   - #### TF-IDF
-TF-IDF (Term Frequency-Inverse Document Frequency) é um modo de vetorizar textos, estes podem ser livros artigos científicos revistas ou até mesmo tweets. Vetorizar um texto é o processo de atribuir números para textos, um exemplo da utilização desse mecanismo no dia a dia é a ferramenta de pesquisa do google e demais browsers. É possível fazer um paralelo entre a TF-IDF e a Suavização de Laplace, uma vez que assim como a Suavização de Laplace, esta também surgiu para corrigir um problema em um outro método, no entanto em seu caso foi para corrigir um problema na Vetorização de Textos por Bag of Words (BOW). O método BOW vetoriza textos somente de acordo com a frequência com que cada palavra de uma frase aparece em cada texto analisado. JÁ a TF-IDF também leva em conta a quantidade de vezes em que uma palavra aparece no conjunto de texto. Ao separar o anagrama TF-IDF no “hífen” obtemos TF, o que equivale ao método BOW, e IDF, o que leva em conta a frequência total de cada palavra em todos os textos. A seguir está uma imagem do cálculo para realizar TF-IDF e um embedded link  para o site usado para entender o que TF-IDF é e como ele pode ser usado e aplicado.
+TF-IDF (Term Frequency-Inverse Document Frequency) é um modo de vetorizar textos, estes podem ser livros artigos científicos revistas ou até mesmo tweets. Vetorizar um texto é o processo de atribuir números para textos, um exemplo da utilização desse mecanismo no dia a dia é a ferramenta de pesquisa do google e demais browsers. É possível fazer um paralelo entre a TF-IDF e a Suavização de Laplace, uma vez que assim como a Suavização de Laplace, esta também surgiu para corrigir um problema em um outro método, no entanto em seu caso foi para corrigir um problema na Vetorização de Textos por Bag of Words (BOW). O método BOW vetoriza textos somente de acordo com a frequência com que cada palavra de uma frase aparece em cada texto analisado. JÁ a TF-IDF também leva em conta a quantidade de vezes em que uma palavra aparece no conjunto de texto. Ao separar o anagrama TF-IDF no “hífen” obtemos TF, o que equivale ao método BOW, e IDF, o que leva em conta a frequência total de cada palavra em todos os textos. A seguir está um code snippet com uma ideia incompleta de como codar a TF-IDF e uma imagem, um embedded link  para o site usado para entender o que TF-IDF é e como ele pode ser usado e aplicado, do cálculo para realizar TF-IDF.
+````python
+# apos limpar e separar a base de dados em relevante e irrelevante
+rel = ['asd356756378fasdf aerg', 'asdfas123df', 'import', 'sys']
+irel = ['asdfas123df', 'asd356756378fasdf', 'dsghsdfghs', 'aerg', 'Projetos']
+l = rel + irel
+l_split = [j for s in l for j in s.split()]
+l_join = ' '.join(str(n) for n in l)
+print('l_split', l_split)
+print('l_join', l_join)
+frequencia_txt_td = {s: l_join.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frquencias no texto inteiro
+frequencia_txt_rel = {s: l_join.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frquencias no texto rel
+frequencia_txt_irel = {s: l_join.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frquencias no texto irel
+'agr só faltaria matematica - agr só faltaria matematica - agr só faltaria matematica - agr só faltaria matematica'
+````
 <p align="center">
  <a href="https://towardsdatascience.com/getting-started-with-text-vectorization-2f2efbec6685" >
  <img src="https://raw.githubusercontent.com/RafaelNiccheri/gfjh/main/zdfsg.png?token=AO7T4BXDFZ4FLHVJP4LBPG3BKOHWQ">

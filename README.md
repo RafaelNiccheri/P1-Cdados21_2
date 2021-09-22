@@ -31,17 +31,26 @@ Por mais que nosso classificador esteja com um desempenho de +/- 52.5% de acurá
     - TF-IDF (Term Frequency-Inverse Document Frequency) é um modo de vetorizar textos que podem ser livros, artigos científicos, revistas ou até mesmo ‘tweets’. Vetorizar um texto é o processo de atribuir números para textos. Um exemplo da utilização desse mecanismo no dia a dia é a ferramenta de pesquisa do google e demais navegadores. É possível fazer um paralelo entre a TF-IDF e a Suavização de Laplace, visto que assim como a Suavização de Laplace, este também surgiu para corrigir um problema em outro método, no entanto, nesse caso foi para corrigir um problema na Vetorização de Textos por Bag of Words (BOW). O método BOW vetoriza textos somente conforme a frequência com que cada palavra de uma frase aparece em cada texto analisado. JÁ a TF-IDF também considera a quantidade de vezes em que uma palavra aparece em um conjunto de textos. Ao separar o anagrama TF-IDF no “hífen” obtemos TF, o que equivale ao método BOW, e IDF, que considera a frequência total de cada palavra em todos os textos. A seguir está um code snippet com uma ideia incompleta de como codar a TF-IDF e uma imagem do cálculo, com um embedded link para o site usado para entender o que TF-IDF é e como ela pode ser usada e aplicada.
 ````python
 # apos limpar e separar a base de dados em relevante e irrelevante
-rel = ['asd356756378fasdf aerg', 'asdfas123df', 'import', 'sys']
-rel_join = ' '.join(str(n) for n in rel)
+rel = ['asd356756378fasdf 1232432 aerg aerg', 'asdfas123df lkidrugfyhb  ha ha ha ha ha dfs;gouijhbsr9pdog8', 'asdgfasgdda tf trf tf  import', 'rtuyie567yw6 w465yuw4uy  oi oi oi sys']
 irel = ['asdfas123df', 'asd356756378fasdf', 'dsghsdfghs', 'aerg', 'Projetos']
-irel_join = ' '.join(str(n) for n in rel)
-l = rel + irel
-l_split = [j for s in l for j in s.split()]
-l_join = ' '.join(str(n) for n in l)
-frequencia_txt_td = {s: l_join.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frequencias no texto inteiro
-frequencia_txt_rel = {s: l_rel.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frequencias no texto rel
-frequencia_txt_irel = {s: l_irel.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frequencias no texto irel
+l = rel + irel  # tds os documentos
+l_split = [j for s in l for j in s.split()]  # tds as palavras em tds os documentos
+l_join = ' '.join(str(n) for n in l)  # tds os documentos como 1
+print('l_split', l_split)  # teste
+print('l_join', l_join)  # teste
+print('l',l)  # teste
+frequencia_txt_ind = {}  # dictionary with each documents as a key and a dict with each term on it as a key and its respective frequency as value
+for d in l:
+    count_dic = {}
+    for t in d.split():
+        count_t = d.count(t)
+        count_dic[t] = count_t
+    frequencia_txt_ind[d] = count_dic
+frequencia_txt_td = {s: l_join.count(s) for s in l_split}  # cria um dicionario com todas as palavras e suas frquencias no texto inteiro
 'agr só faltaria matematica - agr só faltaria matematica - agr só faltaria matematica - agr só faltaria matematica'
+print(frequencia_txt_ind)  # mais teste
+
+""" AGORA FALTARIA APENAS USAR OS VALORES EM "frequencia_txt_td" PARA CALCULAR IDF E FAZER A CONTA"""
 ````
 <p align="center">
  <a href="https://towardsdatascience.com/getting-started-with-text-vectorization-2f2efbec6685" >

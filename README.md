@@ -20,9 +20,45 @@ Por mais que nosso classificador esteja com um desempenho de +/- 52.5% de acurá
              - remove_word_sts - Tira palavras menores do que x
              - remove_num_str - tira palavras com uma sequência de números maiores que x ou que tenham uma quantidade de números que representem mais de y% de uma palavra
              - remove_options - recebe True/False para cada uma dessas funções e caso a função possa receber ou exija parâmetros ela também os recebe
-<p align="center">
-  <img src="https://raw.githubusercontent.com/RafaelNiccheri/gfjh/79f18e10c9a107247f499361e290049c95e9b7e8/Captura%20de%20tela%202021-09-16%20220519.png?token=AO7T4BQLVXOPW2SU3A7T5OLBKPRJ4">
-</p>
+````python
+class RemoveWords:
+    list_desired_words = [Object_of_Study]
+    while True:
+        Desired_Study_Words = str(input(
+            f"""Enter words you don't want removed individually or separated by space, all words
+    entered are case matched to lowercase. Type {Object_of_Study} to leave: """))
+        if '' in list_desired_words:
+            list_desired_words.remove('')
+        if Desired_Study_Words == Object_of_Study:
+            break
+        elif ' ' in Desired_Study_Words:
+            split_input = [j for j in Desired_Study_Words.split()]
+            for j in split_input:
+                j = j.lower()
+                list_desired_words.append(j)
+        else:
+            list_desired_words.append(Desired_Study_Words.lower())
+    print(
+        f'Here is a list of length {len(list_desired_words)} with all words that wont be removed {list_desired_words}')
+
+    def __init__(self, dataframe, column_name, show_removed=False):
+
+    def _filter_simple(self, key_word='', length_st=0):
+
+    def remove_at(self):
+
+    def remove_link(self):
+
+    def remove_ponc(self, punks=string.punctuation):
+       
+    def remove_laugh(self, length_k, length_no_k):
+
+    def remove_word_sts(self, length_s):
+
+    def remove_num_str(self, length_num_c, percent_str_num=100):
+
+    def remove_options(self, **kwargs):
+````
 
 - ### Como ele pode ser melhorado:
   - #### Lemmatizing words

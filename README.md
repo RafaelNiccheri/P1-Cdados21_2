@@ -61,8 +61,6 @@ class RemoveWords:
 ````
 
 - ### Como ele pode ser melhorado:
-  - #### Lemmatizing words
-  - #### n-grams
   - #### TF-IDF
     - TF-IDF (Term Frequency-Inverse Document Frequency) é um modo de vetorizar textos que podem ser livros, artigos científicos, revistas ou até mesmo ‘tweets’. Vetorizar um texto é o processo de atribuir números para textos. Um exemplo da utilização desse mecanismo no dia a dia é a ferramenta de pesquisa do google e demais navegadores. É possível fazer um paralelo entre a TF-IDF e a Suavização de Laplace, visto que assim como a Suavização de Laplace, este também surgiu para corrigir um problema em outro método, no entanto, nesse caso foi para corrigir um problema na Vetorização de Textos por Bag of Words (BOW). O método BOW vetoriza textos somente conforme a frequência com que cada palavra de uma frase aparece em cada texto analisado. JÁ a TF-IDF também considera a quantidade de vezes em que uma palavra aparece em um conjunto de textos. Ao separar o anagrama TF-IDF no “hífen” obtemos TF, o que equivale ao método BOW, e IDF, que considera a frequência total de cada palavra em todos os textos. A seguir está um ‘code snippet’ com uma ideia incompleta de como codar a TF-IDF e uma imagem do cálculo, com um embedded link para o site usado para entender o que TF-IDF é e como ela pode ser usada e aplicada.
 ````python
